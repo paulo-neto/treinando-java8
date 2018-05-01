@@ -8,11 +8,14 @@ import java.util.function.Consumer;
 
 public class Main {
 
-	public static void main(String[] args) {
-		List<String> texto = new ArrayList<>();
+	static List<String> texto = new ArrayList<>();
+	static {
 		texto.add("trakinas");
 		texto.add("negresco");
 		texto.add("oreo");
+	}
+	
+	public static void main(String[] args) {
 		//Iterando coleções
 		//Até o Java 7
 		for (String string : texto) {
@@ -21,14 +24,9 @@ public class Main {
 		//A partir do java 8
 		Consumer<String> consumer = new ImprimeNoConsole();
 		texto.forEach(consumer);
-		//ou
-		texto.forEach(t ->{
-			System.out.println(t);
-		});
 		//Ordenando colecoes 
 		//ate o java 7
 		Collections.sort(texto, new OrdenaPorTamanho());
-		
 		//A partir do java 8
 		texto.sort(new OrdenaPorTamanho());
 		System.out.println(texto);
