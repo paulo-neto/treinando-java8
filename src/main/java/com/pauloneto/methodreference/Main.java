@@ -34,6 +34,7 @@ public class Main {
 		texto.forEach(s -> System.out.println(s));
 		texto.forEach(System.out::println);
 		texto.sort(Comparator.comparing(funcao2));
+		texto.sort(String.CASE_INSENSITIVE_ORDER);
 		
 		/*
 		 * Quando usar lambda e quando usar method reference? 
